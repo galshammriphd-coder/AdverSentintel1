@@ -1,0 +1,43 @@
+# SENTINEL-XLM configuration. Values marked (Table 8) are the hyperparameters reported in Table 8 of the paper.
+model:
+  embedding_dim: 128          # d'  (Table 8)
+  num_layers: 3               # L   (Table 8)
+  temporal_window: 10         # T   (Table 8)
+  num_heads: 4                # H   (Table 8)
+  temporal_heads: 4           # temporal-attention heads (1 in the single-head ablation)
+  dropout: 0.1                # package default (not a Table 8 quantity)
+  num_predicates: 8           # m, learnable atomic predicates (package default)
+  lambda_init: 0.6            # lambda initial value (Table 8)
+  lambda_learnable: true
+  gating: learned             # learned | average | concat_mlp
+  use_spatial: true
+  use_temporal: true
+  use_nre: true
+  use_sem: true
+  use_logic_loss: true
+  rule_noise: 0.0             # fraction of rules whose head polarity is flipped (Table 5)
+  rules_file: rules/trust_rules.yaml
+sem:
+  gamma: 0.95                 # trust decay factor (Table 8)
+  rho: 0.3                    # anomaly penalty factor (Table 8)
+  kappa: 0.5                  # behavioural-deviation sensitivity (package default)
+  eta: 3.0                    # anomaly threshold (package default)
+  tau_ref: 10                 # reference-outcome window (Section 3.5.2)
+  mu: 0.05                    # rule-weight learning rate, Eq. 20 (package default)
+  evolve_every: 10            # rule evolution interval in optimizer steps / windows
+training:
+  learning_rate: 0.001        # (Table 8)
+  batch_size: 256             # target windows per optimizer step (Table 8)
+  epochs: 100                 # (Table 8)
+  early_stopping_patience: 20 # (Table 8)
+  early_stopping_metric: auc  # validation AUC
+  optimizer: adam
+  logic_loss_weight: 0.1      # alpha_L (Table 8)
+  regularization_weight: 0.01 # beta_R  (Table 8)
+  regularization_normalize: true  # ||theta||^2 is divided by the number of parameters (see DEVIATIONS.md)
+  symmetry_weight: 0.01       # tau_s (package default)
+  seeds: [42, 123, 456, 789, 1024]
+graph:
+  window_seconds: 60
+  label_threshold: 0.30
+  split_seed: 42

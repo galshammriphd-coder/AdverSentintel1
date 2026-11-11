@@ -1,0 +1,14 @@
+# Dataset adapters. Each raw dataset must provide: source IP, destination IP, timestamp,
+# binary label and (optionally) an attack-category column that is used only for evaluation.
+common:
+  max_categories: 20        # one-hot: 20 most frequent categories + "other"
+unsw:
+  categorical: [proto, state, service]
+  drop_columns: [sport, dsport, Ltime]
+  packet_columns: [Spkts, Dpkts]
+  duration_column: dur
+cicids:
+  categorical: []
+  drop_columns: ["Flow ID", "Source Port", "Protocol", "Timestamp"]
+  rate_column: "Flow Packets/s"
+  duration_column: "Flow Duration"

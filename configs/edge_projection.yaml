@@ -1,0 +1,4 @@
+# Analytical edge-deployment projection (Table 15). These rows are PROJECTED from the measured FP32 server
+# measurement with the multiplicative factors below; no physical edge hardware is used.
+jetson_agx_orin_int8:     {latency_factor: 1.677, memory_factor: 0.2857, description: "INT8 post-training quantization"}
+raspberry_pi_5_int8_p40:  {latency_factor: 4.928, memory_factor: 0.5517, description: "INT8 quantization + 40% magnitude pruning"}

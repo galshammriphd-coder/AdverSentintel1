@@ -1,0 +1,13 @@
+# Per-baseline best hyperparameters after grid search (Table 8b). Search grid for all baselines:
+# lr {1e-4,1e-3,1e-2}, d' {64,128,256}, layers {1,2,3}, batch {128,256,512}, dropout {0.0,0.1,0.3}.
+# Selection: peak validation AUC, early-stopping patience 20 (identical to SENTINEL-XLM).
+gcn_trust:      {d: 64,  layers: 2, heads: 1, lr: 0.001,  batch: 128, dropout: 0.1}
+gat_security:   {d: 128, layers: 2, heads: 4, lr: 0.001,  batch: 256, dropout: 0.1}
+graphsage_edge: {d: 128, layers: 2, heads: 1, lr: 0.001,  batch: 256, dropout: 0.0}
+evolvegcn_edge: {d: 128, layers: 2, heads: 1, lr: 0.001,  batch: 128, dropout: 0.1}
+dysat_trust:    {d: 256, layers: 2, heads: 4, lr: 0.001,  batch: 256, dropout: 0.1}
+trustgnn:       {d: 128, layers: 2, heads: 1, lr: 0.001,  batch: 128, dropout: 0.1}
+nesy_trust:     {d: 128, layers: 2, heads: 1, lr: 0.001,  batch: 256, dropout: 0.0}
+llm_gnn:        {d: 128, layers: 2, heads: 1, lr: 0.0001, batch: 128, dropout: 0.1}
+causalnet:      {d: 64,  layers: 2, heads: 1, lr: 0.001,  batch: 128, dropout: 0.1}
+edgetrust_6g:   {d: 128, layers: 3, heads: 4, lr: 0.001,  batch: 256, dropout: 0.1}
