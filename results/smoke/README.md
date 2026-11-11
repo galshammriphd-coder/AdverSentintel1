@@ -1,0 +1,1 @@
+Outputs of the pipeline check on synthetic data (one epoch, one or two seeds). The numbers have no scientific meaning; they only show that every script produces its table. Memory columns on a CPU are RSS increases and are noisy.

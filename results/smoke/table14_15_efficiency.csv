@@ -1,0 +1,14 @@
+model,latency_ms,memory_mb,parameters_M,kind,platform,note
+gcn_trust,1.5107959550073247,9.6015625,0.005633,measured,,
+gat_security,2.984077344996763,1.53515625,0.019713,measured,,
+graphsage_edge,1.45001962499407,0.03125,0.038529,measured,,
+evolvegcn_edge,7.720928140000183,2.12109375,0.121045,measured,,
+dysat_trust,5.299824279999825,2.28125,0.285953,measured,,
+trustgnn,1.783513459996584,0.0625,0.019841,measured,,
+nesy_trust,2.313617844994269,0.51953125,0.020619,measured,,
+llm_gnn,3.796740700042278,0.23828125,0.131585,measured,,
+causalnet,2.5368365599973686,0.08984375,0.271937,measured,,
+edgetrust_6g,7.099028955005338,0.06640625,0.201474,measured,,
+sentinel_xlm,8.614679339999043,0.71875,0.284682,measured,,
+sentinel_xlm,14.446817253178395,0.205346875,,projected,jetson_agx_orin_int8,INT8 post-training quantization
+sentinel_xlm,42.45313978751528,0.396534375,,projected,raspberry_pi_5_int8_p40,INT8 quantization + 40% magnitude pruning

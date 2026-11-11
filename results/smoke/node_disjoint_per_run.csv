@@ -1,0 +1,2 @@
+dataset,split,model,seed,best_epoch,accuracy,precision,recall,f1,auc,test_flows
+unsw,node_disjoint,sentinel_xlm,42,1,28.514056224899598,8.130514023967354,28.514056224899598,12.653112449799195,0.6148124703275835,1545
