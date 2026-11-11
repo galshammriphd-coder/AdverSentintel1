@@ -1,0 +1,13 @@
+{
+  "unsw": {
+    "source": "UNSW_NB15_training-set.csv (175,341) + UNSW_NB15_testing-set.csv (82,332)",
+    "used": {"total": 257673, "benign": 93000, "attack": 164673, "benign_ratio_percent": 36.09},
+    "split": {"train": 180370, "val": 25768, "test": 51535}
+  },
+  "cicids": {
+    "raw": {"total": 2830743, "benign": 2273097, "attack": 557646},
+    "duplicates_removed_benign": 8867,
+    "used": {"total": 2821876, "benign": 2264230, "attack": 557646, "benign_ratio_percent": 80.24},
+    "split": {"train": 1975312, "val": 282188, "test": 564376}
+  }
+}
