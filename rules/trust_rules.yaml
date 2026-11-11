@@ -1,0 +1,118 @@
+description: Initial symbolic knowledge base K (R=15 rules over m=8 learnable predicates).
+  Head +1 means 'implies Trustworthy', -1 means 'implies not Trustworthy'. Categories
+  follow Section 3.4.4.
+predicates:
+- HighComputation
+- RecentAnomaly
+- StableHistory
+- BurstTraffic
+- RareProtocol
+- PeerUntrusted
+- LongSession
+- ConsistentRate
+rules:
+- name: r01
+  category: behavioral_consistency
+  pos:
+  - 2
+  neg:
+  - 1
+  head: 1
+- name: r02
+  category: behavioral_consistency
+  pos:
+  - 2
+  - 7
+  neg: []
+  head: 1
+- name: r03
+  category: behavioral_consistency
+  pos:
+  - 7
+  neg:
+  - 3
+  head: 1
+- name: r04
+  category: behavioral_consistency
+  pos:
+  - 2
+  neg:
+  - 4
+  head: 1
+- name: r05
+  category: behavioral_consistency
+  pos: []
+  neg:
+  - 1
+  - 0
+  head: 1
+- name: r06
+  category: behavioral_consistency
+  pos:
+  - 6
+  - 7
+  neg:
+  - 5
+  head: 1
+- name: r07
+  category: anomaly_response
+  pos:
+  - 1
+  neg: []
+  head: -1
+- name: r08
+  category: anomaly_response
+  pos:
+  - 3
+  - 0
+  neg: []
+  head: -1
+- name: r09
+  category: anomaly_response
+  pos:
+  - 4
+  - 1
+  neg: []
+  head: -1
+- name: r10
+  category: anomaly_response
+  pos:
+  - 3
+  neg:
+  - 2
+  head: -1
+- name: r11
+  category: anomaly_response
+  pos:
+  - 0
+  neg:
+  - 7
+  head: -1
+- name: r12
+  category: relational_trust
+  pos:
+  - 5
+  neg: []
+  head: -1
+- name: r13
+  category: relational_trust
+  pos:
+  - 5
+  - 3
+  neg: []
+  head: -1
+- name: r14
+  category: relational_trust
+  pos:
+  - 2
+  neg:
+  - 5
+  head: 1
+- name: r15
+  category: relational_trust
+  pos:
+  - 7
+  neg:
+  - 5
+  - 1
+  head: 1
